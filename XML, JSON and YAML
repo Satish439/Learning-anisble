@@ -1,0 +1,34 @@
+#Inputs - courseName, TrainerName, timings, mobile numbers, topics
+
+ <courseName>Devops with AWS</courseNama>
+ <trainerName>Raghu</trainerName>
+ <timings>
+     <ist.6AMIST</ist>
+     <est>830PMEST<est>
+ </timings>
+ <contacts>999,888</contact>
+
+
+ ### JSON format ###
+
+{
+ "courseName" : "Devops with AWS",
+ "trainerName" : "Raghu",
+ "timings" : {
+      "ist" : "6am",
+      "est" : "830pm"
+    },
+    "contacts" : [999, 888]
+    }
+
+
+### YAML way of writing ####
+
+courseName: Devops with AWS
+trainerName: Raghu
+timings:
+  ist: 6am
+  est: 8.30pm
+contacts:
+  -999
+  -888
