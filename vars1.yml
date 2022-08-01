@@ -15,3 +15,30 @@
     - name: print url
       ansible.builtin.debug:
         msg: URL = {{ URL }}
+
+- name: Vars from tasks
+  hosts: localhost
+  tasks:
+    - name: print URL
+      ansible.builtin.debug:
+        msg: URL = {{ URL }}
+      vars:
+        URL: tasks.example.com
+
+- name: Register Variables
+  hosts: localhost
+  tasks:
+    - name: Run uptime command
+      ansible.builtin.shell: uptime
+      register: output
+    - name: print the output of shell command
+      ansible.builtin.debug:
+        msg: "{{output}}"
+        #### or to store output with a standard name###
+    - name: store variable in a standard name
+      ansible.builtin.set_fact:
+        UPTIME: "{{output.stdout}}"
+    - name: print Output of the shell command
+      ansible.builtin.debug:
+        msg: "{{UPTIME}}"
+
