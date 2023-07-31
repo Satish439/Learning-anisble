@@ -1,0 +1,22 @@
+- name: understanding the perdence of variables
+  hosts: dbsrvgrp
+  become: yes
+  #vars:
+    #USERNM: playuser
+    #COMMENT: varaible from playbook
+  tasks:
+    - name: create user
+      user:
+        name: "{{USERNM}}"
+        comment: "{{COMMENT}}"
+      register: userout
+
+    - name: print the out the register
+      debug:
+        msg: "{{userout.name}}", "{{userout.comment}}"
+
+    - name: priny the out of register using var
+      debug:
+        var: userout.name
+      debug:
+        var: userout.comment

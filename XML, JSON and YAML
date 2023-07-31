@@ -32,3 +32,29 @@ timings:
 contacts:
   -999
   -888
+
+### Wirting in other way of yaml file ###
+
+courseName: Devops with AWS
+trainerName: raghu
+timing:     ## this is list###
+  - 0600IST
+  - 0730IST
+topics:  ### this is map ###
+  aws:
+    - EC2
+    - S3
+  devops: ["Ansible", "Shell scripting"]
+phoneNumber: {personal: 999, mobile: 88989}
+
+###or we also create as below###
+
+courseName: Devops with AWS
+trainerName: raghu
+timing: [ "0600IST", "0730IST"]
+topics: { aws: ["EC2", "S3"] }  ### if it is a map we can write in flower braces## key-key-value is map
+  devops: ["Ansible", "Shell scripting"]
+phoneNumber: {personal: 999, mobile: 9888}
+
+
+

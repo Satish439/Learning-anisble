@@ -7,3 +7,7 @@
     - name: Print Fruit
       debug:
        msg: Apple
+
+### - name is an optional key, but we always use as a best practice"
+### ansible.builtin.debug is a collection, this is supported from 2.10 version
+### debug is module supported only till 2.9 ansible version###

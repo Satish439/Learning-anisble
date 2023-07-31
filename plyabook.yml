@@ -1,0 +1,44 @@
+- hosts: DATABASES
+  tasks:
+    - ansible.builtin.debug:
+        msg: "Hello World"
+
+- name: play2
+  hosts: APPLICATION
+  roles:
+    - roleA
+    - roleB
+
+---
+- name: setup webserver
+  hosts: websergrp
+  become: yes
+  vars:
+    dbname: groups
+    dbuser: devops
+    dbpass: admin123
+  tasks:
+    - name: print the values of vars
+      debug:
+        var: dbname, dbuser, dbpass
+
+     - name: print the values of vars using msg
+       debug:
+         msg: "vaule of dbname is {{dbname}}", "value of dbuser is {{dbuser}}"
+    - name: install Apache httd
+      yum:
+        name: httpd
+        state: present
+
+- name: setup Dbserver
+  hosts: dbservergrp
+  tasks:
+    - name: install mysql server
+      yum:
+        name: mariadb-server
+        state: persent
+    - name: start and enable mariadb service
+      service:
+        name: mariadb
+        state: started
+        enabled: yes
