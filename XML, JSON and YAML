@@ -45,7 +45,7 @@ topics:  ### this is map ###
     - EC2
     - S3
   devops: ["Ansible", "Shell scripting"]
-phoneNumber: {personal: 999, mobile: 88989}
+  phoneNumber: {personal: 999, mobile: 88989}
 
 ###or we also create as below###
 

@@ -4,14 +4,14 @@
 
 - name: Print URL
   ansible.builtin.debug:
-    msg: URL = {{URL}}
+    msg: "{{URL}}"
 
 - name: Copy file
   ansible.builtin.copy:
-    src: sample.txt
+    src: Sample.tx t
     dest: /tmp/sample-file.txt
 
 - name: Template a file
   ansible.builtin.template:
-    src: sample.txt
+    src: Sample.txt
     dest: /tmp/sample-template.txt
